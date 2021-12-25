@@ -1,4 +1,5 @@
 import React, {Component} from "react";
+import PropTypes from 'prop-types';
 import Notification from '../Notification/Notification';
 import { TitleStatistics, StatisticsOption, Section } from './Statistics.styled';
 
@@ -17,3 +18,11 @@ export default class Statistics extends Component {
         : <Notification message="There is no feedback"/>;
     };
 };
+
+Statistics.propTypes = {
+    good: PropTypes.number,
+    neutral: PropTypes.number,
+    bad: PropTypes.number,
+    total: PropTypes.number,
+    positivePercentage: PropTypes.number
+}
